@@ -8,6 +8,8 @@ public class Main {
 
         System.out.println("Isaac value is: " + map.get("Isaac"));
 
+        map.remove("Tom");
+
         System.out.println(map);
     }
 }

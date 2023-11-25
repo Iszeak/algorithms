@@ -1,7 +1,6 @@
 package coding.challenge;
 
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 /*
  *  Write a basic implementation of a map data structure that allows you to put,get,
@@ -93,6 +92,23 @@ public final class CustomMap<K, V> {
                 condenseArray(i);
             }
         }
+    }
+
+    public Set<K> keySet(){
+        Set<K> set = new HashSet<>();
+        for(int i = 0; i < size; i++){
+            set.add(entries[i].getKey());
+        }
+        return set;
+    }
+
+    public Collection<V> values(){
+        // we use list because it allows duplicate
+        List<V> list = new ArrayList<>();
+        for(int i = 0; i < size; i++){
+            list.add(entries[i].getValue());
+        }
+        return list;
     }
 
     private void condenseArray(int start){
